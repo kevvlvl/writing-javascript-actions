@@ -15,4 +15,4 @@ jobs:
           first-greeting: "Super Lab dude"
 
       - name: ha-ha
-        uses: ./github/actions/joke-action
+        uses: ./.github/actions/joke-action
