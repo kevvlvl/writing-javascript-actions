@@ -9,10 +9,16 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: hello-action
+      - name: hello action
         uses: ./.github/actions/hello-world
         with:
           first-greeting: "Super Lab dude"
 
-      - name: ha-ha
+      - name: ha ha
         uses: ./.github/actions/joke-action
+
+      - name: create issue
+        uses: ./.github/actions/issue-maker
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          joke: ${{steps.jokes.outputs.joke-output}}
